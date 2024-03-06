@@ -16,9 +16,7 @@ export default function FontSelect(props: FontSelectProps) {
       <select name={name} id={id} onChange={onChange}>
         <option value="direct">[直接指定]</option>
         <option value="M PLUS\ 1p">M PLUS 1p</option>
-        <option value="M PLUS Rounded\ 1c" selected>
-          M PLUS Rounded 1c
-        </option>
+        <option value="M PLUS Rounded\ 1c" selected>M PLUS Rounded 1c</option>
         <option value="Mamelon">マメロン</option>
         <option value="YasashisaB">やさしさB</option>
         <option value="HuiFont29">ふい字</option>

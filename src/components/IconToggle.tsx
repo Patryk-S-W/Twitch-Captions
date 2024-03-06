@@ -6,11 +6,10 @@ export interface IconToggleProps {
   id?: string
 }
 
-export function IconToggle(props: IconToggleProps) {
+export function IconToggle(props: Readonly<IconToggleProps>) {
   const { checked = false, onChange, icon, label, id } = props
 
   return (
-    <>
       <label htmlFor={id} className="relative inline-flex items-center cursor-pointer">
         <input
           id={id}
@@ -37,6 +36,5 @@ export function IconToggle(props: IconToggleProps) {
         )}
         <div className="ml-4 text-gray-600">{label}</div>
       </label>
-    </>
   )
 }

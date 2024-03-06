@@ -1,4 +1,4 @@
-import ReactSelect, { ActionMeta, SingleValue } from 'react-select'
+import ReactSelect, { SingleValue } from 'react-select'
 import { useState } from 'react'
 
 export type LanguageType = 'transcribe' | 'translate'
@@ -75,7 +75,7 @@ export function LanguageSelect({
   onChange,
   id,
   ...props
-}: LanguageSelectProps) {
+}: Readonly<LanguageSelectProps>) {
   const languages = languageType === 'translate' ? translateLanguages : transcribeLanguages
   let defaultLabel = 'English'
   if (Object.prototype.hasOwnProperty.call(languages, defaultValue)) {
@@ -99,7 +99,7 @@ export function LanguageSelect({
     selectedOption: defaultOption,
   })
 
-  const handleChange = (newValue: SingleValue<Option>, _meta: ActionMeta<Option>) => {
+  const handleChange = (newValue: SingleValue<Option>) => {
     if (newValue !== null) {
       setState({ selectedOption: newValue })
       onChange?.(newValue.value)
@@ -107,7 +107,6 @@ export function LanguageSelect({
   }
 
   return (
-    <>
       <ReactSelect
         inputId={id}
         options={languageOptions}
@@ -122,19 +121,7 @@ export function LanguageSelect({
           DropdownIndicator: () => null,
         }}
         className="w-64"
-        //styles={{
-        //  control: base => ({
-        //    ...base,
-        //    '&:active': {
-        //      border: '1px solid #000',
-        //    },
-        //    '&:focus': {
-        //      border: '1px solid #000',
-        //    }
-        //  })
-        //}}
         {...props}
       />
-    </>
   )
 }

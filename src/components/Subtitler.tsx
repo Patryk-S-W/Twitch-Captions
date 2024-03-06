@@ -55,7 +55,7 @@ export function Subtitler({
   onToggleHideConfig,
   recogHeight,
   transHeight,
-}: SubtitlerProps) {
+}: Readonly<SubtitlerProps>) {
   const [enabled, setEnabled] = useState(false)
 
   const {
@@ -101,9 +101,7 @@ export function Subtitler({
   }
   if (error) {
     return (
-      <>
         <p>{error}</p>
-      </>
     )
   }
 

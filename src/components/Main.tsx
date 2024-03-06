@@ -17,21 +17,21 @@ export function Main() {
   const [phraseSepTime, setPhraseSepTime] = useState<number>(
     config.phraseSepTime || defaults.phraseSepTime
   )
-  const [recogLang, setRecogLang] = useState<string>(config.recogLang || defaults.recogLang)
-  const [transLang, setTransLang] = useState<string>(config.transLang || defaults.transLang)
-  const [recogFont, setRecogFont] = useState<string>(config.recogFont || defaults.recogFont)
+  const [recogLang, setRecogLang] = useState<string>(config.recogLang ?? defaults.recogLang)
+  const [transLang, setTransLang] = useState<string>(config.transLang ?? defaults.transLang)
+  const [recogFont, setRecogFont] = useState<string>(config.recogFont ?? defaults.recogFont)
   const [customRecogFont, setCustomRecogFont] = useState<string>(
-    config.customRecogFont || defaults.customRecogFont
+    config.customRecogFont ?? defaults.customRecogFont
   )
   const [useCustomRecogFont, setUseCustomRecogFont] = useState<boolean>(
-    config.useCustomRecogFont || defaults.useCustomRecogFont
+    config.useCustomRecogFont ?? defaults.useCustomRecogFont
   )
   const [useCustomTransFont, setUseCustomTransFont] = useState<boolean>(
-    config.useCustomTransFont || defaults.useCustomTransFont
+    config.useCustomTransFont ?? defaults.useCustomTransFont
   )
   const [transFont, setTransFont] = useState<string>(config.transFont || defaults.transFont)
   const [customTransFont, setCustomTransFont] = useState<string>(
-    config.customTransFont || defaults.customTransFont
+    config.customTransFont ?? defaults.customTransFont
   )
   const [recogFontSize, setRecogFontSize] = useState<number>(
     config.recogFontSize ?? defaults.recogFontSize
@@ -52,16 +52,16 @@ export function Main() {
     config.transFontStrokeWidth ?? defaults.transFontStrokeWidth
   )
   const [recogFontColor, setRecogFontColor] = useState<string>(
-    config.recogFontColor || defaults.recogFontColor
+    config.recogFontColor ?? defaults.recogFontColor
   )
   const [transFontColor, setTransFontColor] = useState<string>(
-    config.transFontColor || defaults.transFontColor
+    config.transFontColor ?? defaults.transFontColor
   )
   const [recogFontStrokeColor, setRecogFontStrokeColor] = useState<string>(
-    config.recogFontStrokeColor || defaults.recogFontStrokeColor
+    config.recogFontStrokeColor ?? defaults.recogFontStrokeColor
   )
   const [transFontStrokeColor, setTransFontStrokeColor] = useState<string>(
-    config.transFontStrokeColor || defaults.transFontStrokeColor
+    config.transFontStrokeColor ?? defaults.transFontStrokeColor
   )
   const [bgColor, setBgColor] = useState<string>(config.bgColor || defaults.bgColor)
   const [showFontTest, setShowFontTest] = useState<boolean>(
@@ -73,12 +73,12 @@ export function Main() {
   const [recogHeight, setRecogHeight] = useState<number>(config.recogHeight ?? defaults.recogHeight)
   const [transHeight, setTransHeight] = useState<number>(config.transHeight ?? defaults.transHeight)
 
-  const onChangeApiKey = (e: any) => {
+  const onChangeApiKey = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newApiKey = e?.target?.value ?? ''
     setApiKey(newApiKey)
   }
 
-  const onChangePhraseSepTime = (e: any) => {
+  const onChangePhraseSepTime = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value
     let newNum = Number(newValue) || phraseSepTime
     if (newNum < minPhraseSepTime) {
@@ -130,72 +130,72 @@ export function Main() {
     saveConfig('useCustomTransFont', newValue)
   }
 
-  const onChangeRecogFontColor = (e: any) => {
+  const onChangeRecogFontColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value || recogFontColor
     setRecogFontColor(newValue)
     saveConfig('recogFontColor', newValue)
   }
 
-  const onChangeTransFontColor = (e: any) => {
+  const onChangeTransFontColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value || transFontColor
     setTransFontColor(newValue)
     saveConfig('transFontColor', newValue)
   }
 
-  const onChangeRecogFontStrokeColor = (e: any) => {
+  const onChangeRecogFontStrokeColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value || recogFontStrokeColor
     setRecogFontStrokeColor(newValue)
     saveConfig('recogFontStrokeColor', newValue)
   }
 
-  const onChangeTransFontStrokeColor = (e: any) => {
+  const onChangeTransFontStrokeColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value || transFontStrokeColor
     setTransFontStrokeColor(newValue)
     saveConfig('transFontStrokeColor', newValue)
   }
 
-  const onChangeBgColor = (e: any) => {
+  const onChangeBgColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value || bgColor
     setBgColor(newValue)
     saveConfig('bgColor', newValue)
   }
 
-  const onChangeRecogFontSize = (e: any) => {
+  const onChangeRecogFontSize = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) || recogFontSize
     setRecogFontSize(newNum)
     saveConfig('recogFontSize', newNum)
   }
 
-  const onChangeRecogFontWeight = (e: any) => {
+  const onChangeRecogFontWeight = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) || recogFontWeight
     setRecogFontWeight(newNum)
     saveConfig('recogFontWeight', newNum)
   }
 
-  const onChangeRecogFontStrokeWidth = (e: any) => {
+  const onChangeRecogFontStrokeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) ?? recogFontStrokeWidth
     setRecogFontStrokeWidth(newNum)
     saveConfig('recogFontStrokeWidth', newNum)
   }
 
-  const onChangeTransFontSize = (e: any) => {
+  const onChangeTransFontSize = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) || transFontSize
     setTransFontSize(newNum)
     saveConfig('transFontSize', newNum)
   }
 
-  const onChangeTransFontWeight = (e: any) => {
+  const onChangeTransFontWeight = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) || transFontWeight
     setTransFontWeight(newNum)
     saveConfig('transFontWeight', newNum)
   }
 
-  const onChangeTransFontStrokeWidth = (e: any) => {
+  const onChangeTransFontStrokeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) ?? transFontStrokeWidth
     setTransFontStrokeWidth(newNum)
@@ -220,14 +220,14 @@ export function Main() {
     saveConfig('hideConfig', newValue)
   }
 
-  const onChangeRecogHeight = (e: any) => {
+  const onChangeRecogHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) ?? recogHeight
     setRecogHeight(newNum)
     saveConfig('recogHeight', newNum)
   }
 
-  const onChangeTransHeight = (e: any) => {
+  const onChangeTransHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) ?? transHeight
     setTransHeight(newNum)
@@ -235,7 +235,6 @@ export function Main() {
   }
 
   return (
-    <>
 	<div className="h-screen overflow-auto">
       <Subtitler
         apiKey={apiKey}
@@ -473,7 +472,7 @@ export function Main() {
           <div className="mt-8 grid lg:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="recogLang">
-                Język rozpoznawania głosu &nbsp;
+                Język rozpoznawania głosu{' '}
                 <sup className="hidden">
                   <a
                     href="https://stackoverflow.com/questions/14257598"
@@ -506,7 +505,7 @@ export function Main() {
             </div>
             <div>
               <Label htmlFor="transLang">
-                Język tłumaczenia &nbsp;
+                Język tłumaczenia{' '}
                 <sup className="hidden">
                   <a
                     href="https://cloud.google.com/translate/docs/languages"
@@ -569,7 +568,6 @@ export function Main() {
           </div>
         </div>
       )}
-	  </div>
-    </>
+    </div>
   )
 }

@@ -1,7 +1,5 @@
 import FontPicker from 'react-fontpicker-ts-lite'
 import 'react-fontpicker-ts-lite/dist/index.css'
-//import FontPicker from 'react-fontpicker-ts' // For more fonts
-//import 'react-fontpicker-ts/dist/index.css'
 import './FontPicker.css' // Custom styling to match react-select somewhat
 import { Input } from './Input'
 
@@ -15,7 +13,7 @@ export interface FontPickerOrCustomProps {
   onToggleCustom?: (useCustom: boolean) => void
 }
 
-export function FontPickerOrCustom(props: FontPickerOrCustomProps) {
+export function FontPickerOrCustom(props: Readonly<FontPickerOrCustomProps>) {
   const {
     id,
     defaultValue,
@@ -30,7 +28,7 @@ export function FontPickerOrCustom(props: FontPickerOrCustomProps) {
     onChange?.(font)
   }
 
-  const handleChangeCustom = (e: any) => {
+  const handleChangeCustom = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e?.target?.value ?? ''
     onChangeCustom?.(newValue)
   }

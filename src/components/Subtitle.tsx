@@ -17,7 +17,7 @@ export interface SubtitleProps {
   height?: number
 }
 
-export function Subtitle(props: SubtitleProps) {
+export function Subtitle(props: Readonly<SubtitleProps>) {
   const {
     fontFamily,
     value = '',
@@ -51,7 +51,6 @@ export function Subtitle(props: SubtitleProps) {
   }, [value, scrollBottom])
 
   return (
-    <>
       <div
         className={cx(
           { 'border-b': bottomBorder },
@@ -66,7 +65,6 @@ export function Subtitle(props: SubtitleProps) {
         <textarea
           ref={textarea}
           id={inputId}
-          //className="schan-v-fade"
           className={cx(
             'outline-none border-none leading-tight text-4xl font-bold scrollbar-hide resize-none py-1 px-2 bg-transparent h-full w-full block'
           )}
@@ -83,6 +81,5 @@ export function Subtitle(props: SubtitleProps) {
           readOnly
         />
       </div>
-    </>
   )
 }

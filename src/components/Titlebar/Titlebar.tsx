@@ -1,4 +1,4 @@
-import { Button } from "@/components/uis/button"; //"@/components/uis/button";
+import { Button } from "@/components/uis/button";
 import { Icons } from "@/components/icons";
 import { appWindow } from "@tauri-apps/api/window";
 import { X } from "lucide-react";
@@ -13,7 +13,6 @@ function Titlebar() {
   };
 
   return (
-    <>
       <div
         role="menubar"
         className="flex items-center h-10 p-1 pl-2 space-x-1 border border-b rounded-none bg-background lg:pl-4 focus:outline-none"
@@ -47,7 +46,6 @@ function Titlebar() {
           </Button>
         </div>
       </div>
-    </>
   );
 }
 
