@@ -1,5 +1,4 @@
 import { Button } from "@/components/uis/button"; //"@/components/uis/button";
-import { ModeToggle } from "./ModeToggle";
 import { Icons } from "@/components/icons";
 import { appWindow } from "@tauri-apps/api/window";
 import { X } from "lucide-react";
@@ -29,11 +28,8 @@ function Titlebar() {
             data-tauri-drag-region
             className="w-full font-bold text-left align-middle pointer-events-none poin"
           >
-            Tauri Desktop Template Demo
+            Twitch Subtitles
           </p>
-          <div className="pr-3">
-            <ModeToggle />
-          </div>
 
           <Button
             onClick={minimizeWindow}
