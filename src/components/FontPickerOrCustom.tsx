@@ -28,7 +28,7 @@ export function FontPickerOrCustom(props: Readonly<FontPickerOrCustomProps>) {
     onChange?.(font)
   }
 
-  const handleChangeCustom = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeCustom = (e: any) => {
     const newValue = e?.target?.value ?? ''
     onChangeCustom?.(newValue)
   }
@@ -44,7 +44,7 @@ export function FontPickerOrCustom(props: Readonly<FontPickerOrCustomProps>) {
   return (
     <>
       <FontPicker autoLoad inputId={id} defaultValue={defaultValue} value={handleChange} />
-      <span className="inline-flex gap-x-4 px-1 py-2 items-end">
+      <span className="inline-flex gap-x-4 px-1 py-2 items-end hidden">
         <span className="inline-flex gap-x-2 mb-[0.125rem] min-h-[1.5rem] pl-[1.5rem]">
           <input
             id={customCheckboxId}
@@ -58,7 +58,7 @@ export function FontPickerOrCustom(props: Readonly<FontPickerOrCustomProps>) {
             className="inline-block pl-[0.15rem] hover:cursor-pointer"
             htmlFor={customCheckboxId}
           >
-            Custom?
+            Własna?
           </label>
         </span>
         <label

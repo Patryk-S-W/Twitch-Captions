@@ -29,8 +29,8 @@ export function useSubtitles(props: useSubtitlesProps = {}) {
   const [translationLog, setTranslationLog] = useState('')
 
   const {
-    recogLang = 'ko',
-    transLang = 'en',
+    recogLang = 'pl',
+    transLang = 'ja',
     interimResults = true,
     apiKey,
     phraseSepTime = 750, // ms
@@ -51,7 +51,6 @@ export function useSubtitles(props: useSubtitlesProps = {}) {
   // Note: transcript = final + ' ' + interim
   const {
     transcript,
-    //interimTranscript,
     finalTranscript,
     listening,
     resetTranscript,

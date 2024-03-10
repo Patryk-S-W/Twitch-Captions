@@ -36,7 +36,7 @@ export function Subtitle(props: Readonly<SubtitleProps>) {
   // As alternative to -webkit-text-stroke, can also create text outline via drop shadow:
   //  drop-shadow-[0_2px_2px_rgba(0,0,0,1.0)]
   // ref: https://stackoverflow.com/questions/70504047/how-to-have-a-bordered-text-in-tailwind
-  const textStroke = (fontStrokeWidth ?? '2') + 'px ' + (fontStrokeColor || 'black')
+  const textStroke = (fontStrokeWidth ?? '2') + 'px ' + (fontStrokeColor ?? 'black')
 
   const textarea = useRef<HTMLTextAreaElement>(null)
   const scrollToBottom = () => {

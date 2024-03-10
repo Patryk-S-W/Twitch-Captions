@@ -8,6 +8,8 @@ import { CopyLinkButton } from './CopyLinkButton'
 import { ColorInput } from './ColorInput'
 import { LanguageSelect } from './LanguageSelect'
 import { FontPickerOrCustom } from './FontPickerOrCustom'
+import './Main.css'
+
 
 export function Main() {
   const config = getAllConfig()
@@ -15,7 +17,7 @@ export function Main() {
   const [apiKey, setApiKey] = useState(config.apiKey)
   const minPhraseSepTime = 100
   const [phraseSepTime, setPhraseSepTime] = useState<number>(
-    config.phraseSepTime || defaults.phraseSepTime
+    config.phraseSepTime ?? defaults.phraseSepTime
   )
   const [recogLang, setRecogLang] = useState<string>(config.recogLang ?? defaults.recogLang)
   const [transLang, setTransLang] = useState<string>(config.transLang ?? defaults.transLang)
@@ -29,7 +31,7 @@ export function Main() {
   const [useCustomTransFont, setUseCustomTransFont] = useState<boolean>(
     config.useCustomTransFont ?? defaults.useCustomTransFont
   )
-  const [transFont, setTransFont] = useState<string>(config.transFont || defaults.transFont)
+  const [transFont, setTransFont] = useState<string>(config.transFont ?? defaults.transFont)
   const [customTransFont, setCustomTransFont] = useState<string>(
     config.customTransFont ?? defaults.customTransFont
   )
@@ -63,7 +65,7 @@ export function Main() {
   const [transFontStrokeColor, setTransFontStrokeColor] = useState<string>(
     config.transFontStrokeColor ?? defaults.transFontStrokeColor
   )
-  const [bgColor, setBgColor] = useState<string>(config.bgColor || defaults.bgColor)
+  const [bgColor, setBgColor] = useState<string>(config.bgColor ?? defaults.bgColor)
   const [showFontTest, setShowFontTest] = useState<boolean>(
     config.showFontTest ?? defaults.showFontTest
   )
@@ -73,12 +75,12 @@ export function Main() {
   const [recogHeight, setRecogHeight] = useState<number>(config.recogHeight ?? defaults.recogHeight)
   const [transHeight, setTransHeight] = useState<number>(config.transHeight ?? defaults.transHeight)
 
-  const onChangeApiKey = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeApiKey = (e: any) => {
     const newApiKey = e?.target?.value ?? ''
     setApiKey(newApiKey)
   }
 
-  const onChangePhraseSepTime = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangePhraseSepTime = (e: any) => {
     const newValue = e?.target?.value
     let newNum = Number(newValue) || phraseSepTime
     if (newNum < minPhraseSepTime) {
@@ -130,72 +132,72 @@ export function Main() {
     saveConfig('useCustomTransFont', newValue)
   }
 
-  const onChangeRecogFontColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeRecogFontColor = (e: any) => {
     const newValue = e?.target?.value || recogFontColor
     setRecogFontColor(newValue)
     saveConfig('recogFontColor', newValue)
   }
 
-  const onChangeTransFontColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeTransFontColor = (e: any) => {
     const newValue = e?.target?.value || transFontColor
     setTransFontColor(newValue)
     saveConfig('transFontColor', newValue)
   }
 
-  const onChangeRecogFontStrokeColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeRecogFontStrokeColor = (e: any) => {
     const newValue = e?.target?.value || recogFontStrokeColor
     setRecogFontStrokeColor(newValue)
     saveConfig('recogFontStrokeColor', newValue)
   }
 
-  const onChangeTransFontStrokeColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeTransFontStrokeColor = (e: any) => {
     const newValue = e?.target?.value || transFontStrokeColor
     setTransFontStrokeColor(newValue)
     saveConfig('transFontStrokeColor', newValue)
   }
 
-  const onChangeBgColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeBgColor = (e: any) => {
     const newValue = e?.target?.value || bgColor
     setBgColor(newValue)
     saveConfig('bgColor', newValue)
   }
 
-  const onChangeRecogFontSize = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeRecogFontSize = (e: any) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) || recogFontSize
     setRecogFontSize(newNum)
     saveConfig('recogFontSize', newNum)
   }
 
-  const onChangeRecogFontWeight = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeRecogFontWeight = (e: any) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) || recogFontWeight
     setRecogFontWeight(newNum)
     saveConfig('recogFontWeight', newNum)
   }
 
-  const onChangeRecogFontStrokeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeRecogFontStrokeWidth = (e: any) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) ?? recogFontStrokeWidth
     setRecogFontStrokeWidth(newNum)
     saveConfig('recogFontStrokeWidth', newNum)
   }
 
-  const onChangeTransFontSize = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeTransFontSize = (e: any) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) || transFontSize
     setTransFontSize(newNum)
     saveConfig('transFontSize', newNum)
   }
 
-  const onChangeTransFontWeight = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeTransFontWeight = (e: any) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) || transFontWeight
     setTransFontWeight(newNum)
     saveConfig('transFontWeight', newNum)
   }
 
-  const onChangeTransFontStrokeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeTransFontStrokeWidth = (e: any) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) ?? transFontStrokeWidth
     setTransFontStrokeWidth(newNum)
@@ -220,14 +222,14 @@ export function Main() {
     saveConfig('hideConfig', newValue)
   }
 
-  const onChangeRecogHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeRecogHeight = (e: any) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) ?? recogHeight
     setRecogHeight(newNum)
     saveConfig('recogHeight', newNum)
   }
 
-  const onChangeTransHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeTransHeight = (e: any) => {
     const newValue = e?.target?.value
     const newNum = Number(newValue) ?? transHeight
     setTransHeight(newNum)
@@ -235,7 +237,7 @@ export function Main() {
   }
 
   return (
-	<div className="h-screen overflow-auto">
+	<div className="h-screen-40 overflow-auto">
       <Subtitler
         apiKey={apiKey}
         phraseSepTime={phraseSepTime}
@@ -290,8 +292,8 @@ export function Main() {
                 />
               </div>
             </form>
-            <div className="hidden">
-              <Label htmlFor="phraseSepTime">Odstęp czasu, między tłumaczeniem, a rozpoznawaniem głosu (ms)</Label>
+            <div>
+              <Label htmlFor="phraseSepTime">Odstęp czasu dla dzielenia tekstu na części (ms)</Label>
               <Input
                 name="phraseSepTime"
                 id="phraseSepTime"
@@ -302,8 +304,8 @@ export function Main() {
           </div>
 
           <div className="mt-8 grid lg:grid-cols-3 gap-4">
-            <div className="hidden">
-              <Label htmlFor="recogFontColor">Transcript Font Color</Label>
+            <div>
+              <Label htmlFor="recogFontColor">Kolor czcionki rozpoznawania głosu</Label>
               <ColorInput
                 name="recogFontColor"
                 id="recogFontColor"
@@ -311,8 +313,8 @@ export function Main() {
                 onChange={onChangeRecogFontColor}
               />
             </div>
-            <div className="hidden">
-              <Label htmlFor="recogFontStrokeColor">Transcript Border Color</Label>
+            <div>
+              <Label htmlFor="recogFontStrokeColor">Kolor ramki rozpoznawania głosu</Label>
               <ColorInput
                 name="recogFontStrokeColor"
                 id="recogFontStrokeColor"
@@ -329,8 +331,8 @@ export function Main() {
                 onChange={onChangeBgColor}
               />
             </div>
-            <div className="hidden">
-              <Label htmlFor="transFontColor">Translation Font Color</Label>
+            <div>
+              <Label htmlFor="transFontColor">Kolor czcionki tłumaczenia</Label>
               <ColorInput
                 type="color"
                 name="transFontColor"
@@ -339,8 +341,8 @@ export function Main() {
                 onChange={onChangeTransFontColor}
               />
             </div>
-            <div className="hidden">
-              <Label htmlFor="transFontStrokeColor">Translation Border Color</Label>
+            <div>
+              <Label htmlFor="transFontStrokeColor">Kolor ramki tłumaczenia</Label>
               <ColorInput
                 type="color"
                 name="transFontStrokeColor"
@@ -351,10 +353,10 @@ export function Main() {
             </div>
           </div>
 
-          <div className="mt-8 grid lg:grid-cols-3 gap-4 hidden">
+          <div className="mt-8 grid lg:grid-cols-3 gap-4">
             <div>
               <Label htmlFor="recogFontSize" value={recogFontSize + 'px'}>
-                Transcript Size
+                Rozmiar czcionki rozpoznawania głosu
               </Label>
               <Range
                 name="recogFontSize"
@@ -368,7 +370,7 @@ export function Main() {
             </div>
             <div>
               <Label htmlFor="recogFontWeight" value={recogFontWeight + ''}>
-                Transcript Weight
+                Grubość czcionki rozpoznawania głosu
               </Label>
               <Range
                 name="recogFontWeight"
@@ -382,7 +384,7 @@ export function Main() {
             </div>
             <div>
               <Label htmlFor="recogFontStrokeWidth" value={recogFontStrokeWidth + 'px'}>
-                Transcript Border
+                Ramka rozpoznawania głosu
               </Label>
               <Range
                 name="recogFontStrokeWidth"
@@ -396,7 +398,7 @@ export function Main() {
             </div>
             <div>
               <Label htmlFor="transFontSize" value={transFontSize + 'px'}>
-                Translation Size
+                Rozmiar czcionki tłumaczenia
               </Label>
               <Range
                 name="transFontSize"
@@ -410,7 +412,7 @@ export function Main() {
             </div>
             <div>
               <Label htmlFor="transFontWeight" value={transFontWeight + ''}>
-                Translation Weight
+                Grubość czcionki tłumaczenia
               </Label>
               <Range
                 name="transFontWeight"
@@ -422,9 +424,9 @@ export function Main() {
                 onChange={onChangeTransFontWeight}
               />
             </div>
-            <div className="h">
+            <div>
               <Label htmlFor="transFontStrokeWidth" value={transFontStrokeWidth + 'px'}>
-                Translation Border
+                Ramka tłumaczenia
               </Label>
               <Range
                 name="transFontStrokeWidth"
@@ -438,10 +440,10 @@ export function Main() {
             </div>
           </div>
 
-          <div className="mt-8 grid lg:grid-cols-2 gap-4 hidden">
+          <div className="mt-8 grid lg:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="recogHeight" value={recogHeight + 'rem'}>
-                Transcript Box Height
+                Wysokość bloku rozpoznawania głosu
               </Label>
               <Range
                 name="recogHeight"
@@ -455,7 +457,7 @@ export function Main() {
             </div>
             <div>
               <Label htmlFor="transHeight" value={transHeight + 'rem'}>
-                Translation Box Height
+                Wysokość bloku tłumaczenia
               </Label>
               <Range
                 name="transHeight"
@@ -473,7 +475,7 @@ export function Main() {
             <div>
               <Label htmlFor="recogLang">
                 Język rozpoznawania głosu{' '}
-                <sup className="hidden">
+                <sup>
                   <a
                     href="https://stackoverflow.com/questions/14257598"
                     target="_blank"
@@ -491,8 +493,8 @@ export function Main() {
                 />
               </span>
             </div>
-            <div className="hidden">
-              <Label htmlFor="recogFont">Transcript Font</Label>
+            <div>
+              <Label htmlFor="recogFont">Czcionka rozpoznawania głosu</Label>
               <FontPickerOrCustom
                 id="recogFont"
                 defaultValue={recogFont}
@@ -506,7 +508,7 @@ export function Main() {
             <div>
               <Label htmlFor="transLang">
                 Język tłumaczenia{' '}
-                <sup className="hidden">
+                <sup>
                   <a
                     href="https://cloud.google.com/translate/docs/languages"
                     target="_blank"
@@ -524,8 +526,8 @@ export function Main() {
                 />
               </span>
             </div>
-            <div className="hidden">
-              <Label htmlFor="transFont">Język tłumaczenia</Label>
+            <div>
+              <Label htmlFor="transFont">Czcionka tłumaczenia</Label>
               <FontPickerOrCustom
                 id="transFont"
                 defaultValue={transFont}
@@ -542,7 +544,7 @@ export function Main() {
               <CopyLinkButton />
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <span className="inline-flex gap-x-4 h-4 items-baseline hidden">
+              <span className="inline-flex gap-x-4 h-4 items-baseline">
                 <input
                   id="showFontTest"
                   name="showFontTest"
@@ -551,7 +553,7 @@ export function Main() {
                   onChange={onChangeShowFontTest}
                   className="disabled:opacity-50"
                 />
-                <Label htmlFor="showFontTest">Show font test?</Label>
+                <Label htmlFor="showFontTest">Pokaż test czcionki?</Label>
               </span>
               <span className="inline-flex gap-x-4 h-4 items-baseline hidden">
                 <input
@@ -562,11 +564,11 @@ export function Main() {
                   onChange={onChangeShowHistory}
                   className="disabled:opacity-50"
                 />
-                <Label htmlFor="showHistory">Show history?</Label>
+                <Label htmlFor="showHistory">Pokaż historię?</Label>
               </span>
             </div>
           </div>
-        </div>
+          </div>
       )}
     </div>
   )

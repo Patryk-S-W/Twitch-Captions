@@ -1,14 +1,14 @@
-# Twitch Subtitles
+# Twitch Captions
 
 
-[![Run on Repl.it](https://repl.it/badge/github/Patryk-S-W/Twitch-Subtitles)](https://repl.it/github/Patryk-S-W/Twitch-Subtitles)
+[![Run on Repl.it](https://repl.it/badge/github/Patryk-S-W/Twitch-Captions)](https://repl.it/github/Patryk-S-W/Twitch-Captions)
 
-[![StackBlitz Demo](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/Patryk-S-W/Twitch-Subtitles)
+[![StackBlitz Demo](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/Patryk-S-W/Twitch-Captions)
 
-![Vercel](https://img.shields.io/github/deployments/Patryk-S-W/Twitch-Subtitles/production.svg?logo=vercel&label=vercel)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Patryk-S-W_Twitch-Subtitles&metric=alert_status)](https://sonarcloud.io/dashboard?id=Patryk-S-W_Twitch-Subtitles)
-[![codecov](https://codecov.io/gh/Patryk-S-W/Twitch-Subtitles/branch/master/graph/badge.svg)](https://codecov.io/gh/Patryk-S-W/Twitch-Subtitles)
-![GitHub last commit](https://img.shields.io/github/last-commit/Patryk-S-W/Twitch-Subtitles.svg)
+![Vercel](https://img.shields.io/github/deployments/Patryk-S-W/Twitch-Captions/production.svg?logo=vercel&label=vercel)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Patryk-S-W_Twitch-Captions&metric=alert_status)](https://sonarcloud.io/dashboard?id=Patryk-S-W_Twitch-Captions)
+[![codecov](https://codecov.io/gh/Patryk-S-W/Twitch-Captions/branch/master/graph/badge.svg)](https://codecov.io/gh/Patryk-S-W/Twitch-Captions)
+![GitHub last commit](https://img.shields.io/github/last-commit/Patryk-S-W/Twitch-Captions.svg)
 
 
 ## Features
@@ -22,8 +22,8 @@
 ## Getting Started
 
 <pre>
-git clone https://github.com/Patryk-S-W/Twitch-Subtitles.git
-cd Twitch-Subtitles
+git clone https://github.com/Patryk-S-W/Twitch-Captions.git
+cd Twitch-Captions
 npm i
 npm run tauri dev
 </pre>

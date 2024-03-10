@@ -7,8 +7,8 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "tauri",
-    "version": "0.1.0"
+    "productName": "Twitch_Captions",
+    "version": "0.2.0"
   },
   "tauri": {
     "allowlist": {
@@ -32,7 +32,7 @@
       "icon": [
         "icons/icon.ico"
       ],
-      "identifier": "com.subtitles.twitch",
+      "identifier": "com.captions.twitch",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -61,10 +61,10 @@
         "fullscreen": false,
         "height": 600,
         "center": true,
-        "resizable": false,
+        "resizable": true,
         "decorations": false,
         "transparent": true,
-        "title": "Twitch Subtitles",
+        "title": "Twitch Captions",
         "width": 800
       }
     ]
